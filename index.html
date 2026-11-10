@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>by.lexic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- style.css должен лежать рядом с index.html -->
+</head>
+<body>
+
+  <!-- 1. МЕНЮ — ссылки на блоки по id. Home подсвечен сразу (class="active"),
+          дальше подсветку переключает маленький скрипт внизу страницы -->
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#works">Works</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- 2. ГЛАВНАЯ — фото на фоне (--img), ник, подпись и две кнопки.
+          Ник появляется целиком (анимация .logo в style.css) -->
+  <section id="home" style="--img:url(image/IMG_28.jpg)">
+    <div class="hero-photo"></div>
+    <h1 class="logo"><span>by.lexic</span></h1>
+    <p class="tagline">Automotive photography</p>
+    <div class="cta">
+      <a class="btn main" href="#works">View works</a>
+      <a class="btn" href="#contact">Contact me</a>
+    </div>
+    <a class="scroll" href="#about">Scroll<i></i></a>
+  </section>
+
+  <!-- 3. ОБО МНЕ — текст слева, фото справа (поменяй текст на свой) -->
+  <section id="about">
+    <div class="about reveal">
+      <div>
+        <h2>About</h2>
+        <p>I’m lexic — I photograph cars. I look for clean lines, honest light and the small details that make every car feel alive.</p>
+        <p>Every shoot is about showing a car the way it feels in person.</p>
+        <ul class="chips"><li>Cars</li><li>Details</li><li>Light</li></ul>
+      </div>
+      <div class="about-photo" style="--img:url(image/IMG_29.jpg)"></div>
+    </div>
+  </section>
+
+  <!-- 4. РАБОТЫ — одна карточка = одна машина.
+          Для новой машины скопируй весь блок <a class="card">.
+          href = первое фото машины, --img = обложка.
+          В карточке только название и стрелка. -->
+  <section id="works">
+    <div class="head reveal">
+      <h2>Works</h2>
+      <p>Tap a car to browse the full set.</p>
+    </div>
+
+    <div class="grid reveal">
+      <a class="card" href="#mercedes-1" style="--img:url(image/IMG_28.jpg)">
+        <span class="label">Mercedes 63</span>
+        <span class="go">↗</span>
+      </a>
+
+      <a class="card" href="#gt3-1" style="--img:url(image/IMG_46.JPG)">
+        <span class="label">Porsche GT3</span>
+        <span class="go">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. КОНТАКТЫ — три карточки: иконка, название, ссылка -->
+  <section id="contact">
+    <div class="head reveal">
+      <h2>Let’s work<br>together</h2>
+      <p>Want to shoot together? Drop me a message.</p>
+    </div>
+
+    <div class="contacts reveal">
+      <a class="contact" href="https://instagram.com/by.lexic" target="_blank">
+        <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/></svg></span>
+        <i>↗</i><small>Instagram</small><b>@by.lexic</b>
+      </a>
+      <a class="contact" href="https://t.me/bylexic" target="_blank">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M21.5 3.5 2.5 10.8l6.2 2.4 2.4 6.3 3-4.2 4.8 3.6z"/><path d="m8.7 13.2 12.8-9.7"/></svg></span>
+        <i>↗</i><small>Telegram</small><b>bylexic</b>
+      </a>
+      <a class="contact" href="mailto:carspott15@gmail.com">
+        <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3.5 7.5 8.5 6 8.5-6"/></svg></span>
+        <i>↗</i><small>Email</small><b>carspott15@gmail.com</b>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 by.lexic</span>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <!-- 6. СЛАЙДЕР (без JavaScript).
+          Каждое фото — свой блок с id. Он скрыт, пока в адресе нет #id — тогда CSS показывает его (:target).
+          Стрелки — ссылки на соседние фото, крестик возвращает к #works.
+          Новое фото: скопируй блок, поменяй id, путь в --img, ссылки prev/next и номер. -->
+  <div class="lightbox" id="mercedes-1" style="--img:url(image/IMG_28.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-16">‹</a>
+    <a class="arrow next" href="#mercedes-2">›</a>
+    <span class="counter">1 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-2" style="--img:url(image/IMG_29.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-1">‹</a>
+    <a class="arrow next" href="#mercedes-3">›</a>
+    <span class="counter">2 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-3" style="--img:url(image/IMG_30.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-2">‹</a>
+    <a class="arrow next" href="#mercedes-4">›</a>
+    <span class="counter">3 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-4" style="--img:url(image/IMG_31.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-3">‹</a>
+    <a class="arrow next" href="#mercedes-5">›</a>
+    <span class="counter">4 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-5" style="--img:url(image/IMG_32.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-4">‹</a>
+    <a class="arrow next" href="#mercedes-6">›</a>
+    <span class="counter">5 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-6" style="--img:url(image/IMG_33.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-5">‹</a>
+    <a class="arrow next" href="#mercedes-7">›</a>
+    <span class="counter">6 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-7" style="--img:url(image/IMG_34.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-6">‹</a>
+    <a class="arrow next" href="#mercedes-8">›</a>
+    <span class="counter">7 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-8" style="--img:url(image/IMG_35.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-7">‹</a>
+    <a class="arrow next" href="#mercedes-9">›</a>
+    <span class="counter">8 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-9" style="--img:url(image/IMG_36.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-8">‹</a>
+    <a class="arrow next" href="#mercedes-10">›</a>
+    <span class="counter">9 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-10" style="--img:url(image/IMG_37.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-9">‹</a>
+    <a class="arrow next" href="#mercedes-11">›</a>
+    <span class="counter">10 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-11" style="--img:url(image/IMG_38.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-10">‹</a>
+    <a class="arrow next" href="#mercedes-12">›</a>
+    <span class="counter">11 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-12" style="--img:url(image/IMG_39.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-11">‹</a>
+    <a class="arrow next" href="#mercedes-13">›</a>
+    <span class="counter">12 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-13" style="--img:url(image/IMG_40.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-12">‹</a>
+    <a class="arrow next" href="#mercedes-14">›</a>
+    <span class="counter">13 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-14" style="--img:url(image/IMG_41.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-13">‹</a>
+    <a class="arrow next" href="#mercedes-15">›</a>
+    <span class="counter">14 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-15" style="--img:url(image/IMG_42.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-14">‹</a>
+    <a class="arrow next" href="#mercedes-16">›</a>
+    <span class="counter">15 / 16</span>
+  </div>
+  <div class="lightbox" id="mercedes-16" style="--img:url(image/IMG_43.jpg)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#mercedes-15">‹</a>
+    <a class="arrow next" href="#mercedes-1">›</a>
+    <span class="counter">16 / 16</span>
+  </div>
+
+  <div class="lightbox" id="gt3-1" style="--img:url(image/IMG_46.JPG)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#gt3-3">‹</a>
+    <a class="arrow next" href="#gt3-2">›</a>
+    <span class="counter">1 / 3</span>
+  </div>
+  <div class="lightbox" id="gt3-2" style="--img:url(image/IMG_44.JPG)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#gt3-1">‹</a>
+    <a class="arrow next" href="#gt3-3">›</a>
+    <span class="counter">2 / 3</span>
+  </div>
+  <div class="lightbox" id="gt3-3" style="--img:url(image/IMG_45.JPG)">
+    <a class="close" href="#works">✕</a>
+    <a class="arrow prev" href="#gt3-2">‹</a>
+    <a class="arrow next" href="#gt3-1">›</a>
+    <span class="counter">3 / 3</span>
+  </div>
+
+  <!-- 7. ЕДИНСТВЕННЫЙ скрипт на сайте: подсвечивает в меню раздел, который сейчас на экране.
+          Без него сайт тоже работает, просто подсветка останется на Home. -->
+  <script>
+    const links = document.querySelectorAll('nav a');
+    const watcher = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.hash === '#' + e.target.id));
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });   // «активным» считается блок в середине экрана
+    document.querySelectorAll('section').forEach(s => watcher.observe(s));
+  </script>
+
+</body>
+</html>
